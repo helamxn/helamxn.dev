@@ -1,0 +1,22 @@
+---
+import { siteConfig } from '@/config/site';
+---
+
+<header class="site-header">
+	<a
+		class="site-brand"
+		href="/"
+		aria-label={`${siteConfig.name}, reiniciar sesión`}
+	>
+		<span class="brand-h">h</span><span class="brand-x">x</span>
+	</a>
+	<nav aria-label="Enlaces profesionales">
+		{
+			siteConfig.socialLinks.map((link) => (
+				<a href={link.href} target="_blank" rel="noreferrer">
+					{link.label.toLowerCase()}
+				</a>
+			))
+		}
+	</nav>
+</header>

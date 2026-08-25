@@ -1,23 +1,61 @@
+---
+import { Font } from "astro:assets";
+import { siteConfig } from "@/config/site";
+import "@/styles/global.css";
+
+interface Props {
+	title?: string;
+	description?: string;
+}
+
+const { title = siteConfig.title, description = siteConfig.description } =
+	Astro.props;
+
+const canonicalUrl = new URL(Astro.url.pathname, siteConfig.url);
+const personSchema = {
+	"@context": "https://schema.org",
+	"@type": "Person",
+	name: siteConfig.name,
+	url: siteConfig.url,
+	email: `mailto:${siteConfig.email}`,
+	jobTitle: "Soporte TI, análisis de datos y desarrollo web",
+	homeLocation: {
+		"@type": "Place",
+		name: siteConfig.location,
+	},
+	sameAs: siteConfig.socialLinks.map(({ href }) => href),
+};
+---
+
 <!doctype html>
-<html lang="en">
+<html lang={siteConfig.language}>
 	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<meta name="theme-color" content={siteConfig.themeColor} />
+		<meta name="robots" content="index, follow" />
+		<meta name="description" content={description} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:type" content="profile" />
+		<meta property="og:url" content={canonicalUrl} />
+		<meta name="twitter:card" content="summary" />
+		<link rel="canonical" href={canonicalUrl} />
+		<link rel="icon" href="/favicon.ico" />
+		<Font cssVariable="--font-cascadia-code" />
+		<script
+			type="application/ld+json"
+			set:html={JSON.stringify(personSchema)}
+		/>
+		<title>{title}</title>
 	</head>
 	<body>
-		<slot />
+		<a class="skip-link" href="#contenido" aria-label="Saltar al contenido principal">
+			jump-to-terminal
+		</a>
+		<div class="site-shell">
+			<slot />
+		</div>
 	</body>
 </html>
-
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>

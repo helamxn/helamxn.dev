@@ -1,11 +1,57 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import SiteHeader from "@/components/SiteHeader.astro";
+import CommandLibrary from "@/components/terminal/CommandLibrary.astro";
+import TerminalMeta from "@/components/terminal/TerminalMeta.astro";
+import TerminalPrompt from "@/components/terminal/TerminalPrompt.astro";
+import TerminalWelcome from "@/components/terminal/TerminalWelcome.astro";
+import { portfolio } from "@/data/portfolio";
+import Layout from "@/layouts/Layout.astro";
 ---
 
 <Layout>
-	<Welcome />
+	<SiteHeader />
+
+	<main id="contenido" class="console-session" data-terminal>
+		<h1 class="sr-only">
+			{portfolio.name}: {portfolio.roles.join(", ")}
+		</h1>
+
+		<TerminalMeta />
+
+		<div class="terminal-log" data-terminal-log>
+			<TerminalWelcome />
+		</div>
+		<p
+			class="sr-only"
+			data-terminal-status
+			role="status"
+			aria-live="polite"
+			aria-atomic="true"
+		>
+		</p>
+
+		<TerminalPrompt />
+
+		<CommandLibrary />
+	</main>
+
+	<noscript>
+		<style>
+			[data-command-library][hidden] {
+				display: grid !important;
+				gap: 3rem;
+				margin-top: 3rem;
+			}
+			[data-terminal-form],
+			[data-terminal-suggestions],
+			.quick-commands,
+			.terminal-hint {
+				display: none !important;
+			}
+		</style>
+	</noscript>
+
+	<script>
+		import "@/scripts/terminal";
+	</script>
 </Layout>

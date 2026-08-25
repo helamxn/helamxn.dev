@@ -1,0 +1,26 @@
+---
+import { portfolio } from '@/data/portfolio';
+---
+
+<section class="console-output table-output" data-output-key="tools">
+	<div class="table-wrapper">
+		<table class="terminal-table" aria-label="Herramientas y tecnologías">
+			<thead>
+				<tr>
+					<th scope="col" class="th-cat">Categoría</th>
+					<th scope="col" class="th-tech">Herramientas / tecnologías</th>
+				</tr>
+			</thead>
+			<tbody>
+				{
+					portfolio.tools.map((tool) => (
+						<tr>
+							<td class="table-category">{tool.name}</td>
+							<td class="table-detail">{tool.detail}</td>
+						</tr>
+					))
+				}
+			</tbody>
+		</table>
+	</div>
+</section>

@@ -1,0 +1,23 @@
+---
+import SiteFooter from '@/components/SiteFooter.astro';
+import FilesOutput from './outputs/FilesOutput.astro';
+import HelpOutput from './outputs/HelpOutput.astro';
+import IdentityOutput from './outputs/IdentityOutput.astro';
+import JourneyOutput from './outputs/JourneyOutput.astro';
+import ProjectsOutput from './outputs/ProjectsOutput.astro';
+import SkillsOutput from './outputs/SkillsOutput.astro';
+import ToolsOutput from './outputs/ToolsOutput.astro';
+---
+
+<div class="command-library" data-command-library hidden aria-hidden="true">
+	<HelpOutput />
+	<FilesOutput />
+	<IdentityOutput />
+	<ProjectsOutput />
+	<SkillsOutput />
+	<ToolsOutput />
+	<JourneyOutput />
+	<section class="console-output" data-output-key="contact">
+		<SiteFooter />
+	</section>
+</div>

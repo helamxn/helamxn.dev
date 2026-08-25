@@ -1,0 +1,17 @@
+---
+import { terminalCommands } from '@/data/commands';
+---
+
+<section class="console-output" data-output-key="help">
+	<p class="output-heading">Comandos disponibles</p>
+	<dl class="command-help">
+		{
+			terminalCommands.map((command) => (
+				<div>
+					<dt>{command.value}</dt>
+					<dd>{command.description}</dd>
+				</div>
+			))
+		}
+	</dl>
+</section>

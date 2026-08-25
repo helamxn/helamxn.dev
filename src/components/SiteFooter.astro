@@ -1,0 +1,15 @@
+---
+import { siteConfig } from '@/config/site';
+---
+
+<footer class="site-footer">
+	<p><span class="output-key">email</span> <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a></p>
+	<p>
+		<span class="output-key">links</span>
+		{siteConfig.socialLinks.map((link) => (
+			<a href={link.href} target="_blank" rel="noreferrer">{link.label.toLowerCase()}</a>
+		))}
+	</p>
+	<p class="session-end">Process finished with exit code 0.</p>
+	<small>© 2026 Helamxn</small>
+</footer>

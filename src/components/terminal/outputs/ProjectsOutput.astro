@@ -1,0 +1,44 @@
+---
+import { portfolio } from '@/data/portfolio';
+---
+
+<section class="console-output projects-output" data-output-key="projects">
+	{
+		portfolio.projects && portfolio.projects.length > 0 ? (
+			<div class="records-output">
+				<p class="output-intro">Proyectos desarrollados y herramientas en construcción:</p>
+				{portfolio.projects.map((project) => (
+					<article>
+						<div>
+							<h3>{project.name}</h3>
+							<p class="record-meta">{project.tech}</p>
+						</div>
+						<div>
+							<p>{project.description}</p>
+							{project.status && (
+								<p class:list={['project-status', { 'status-wip': project.status === 'en proceso' }]}>
+									{project.status === 'en proceso' ? '● en proceso' : '✓ completado'}
+								</p>
+							)}
+						</div>
+					</article>
+				))}
+			</div>
+		) : (
+			<div class="projects-empty">
+				<p class="empty-status">
+					<span class="status-indicator">●</span> Proyectos en preparación
+				</p>
+				<p class="empty-desc">
+					Actualmente estoy seleccionando, refinando y documentando proyectos para publicarlos en este espacio.
+				</p>
+				<p class="empty-link">
+					<span class="output-key">repos</span>
+					<a href="https://github.com/helamxn" target="_blank" rel="noreferrer">
+						github.com/helamxn
+					</a>
+				</p>
+			</div>
+		)
+	}
+</section>

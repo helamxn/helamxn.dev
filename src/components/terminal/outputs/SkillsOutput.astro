@@ -1,0 +1,14 @@
+---
+import { portfolio } from '@/data/portfolio';
+---
+
+<ol class="console-output indexed-output" data-output-key="skills">
+	{
+		portfolio.skills.map((skill, index) => (
+			<li>
+				<span>{String(index + 1).padStart(2, '0')}</span>
+				{skill}
+			</li>
+		))
+	}
+</ol>

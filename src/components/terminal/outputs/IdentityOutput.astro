@@ -1,0 +1,48 @@
+---
+import { siteConfig } from '@/config/site';
+import { portfolio } from '@/data/portfolio';
+---
+
+<section class="console-output identity-output" data-output-key="identity">
+	<div class="ascii-art-container" aria-hidden="true">
+		<pre class="ascii-art ascii-word">
+██╗  ██╗███████╗██╗      █████╗ ███╗   ███╗ █████╗ ███╗   ██╗
+██║  ██║██╔════╝██║     ██╔══██╗████╗ ████║██╔══██╗████╗  ██║
+███████║█████╗  ██║     ███████║██╔████╔██║███████║██╔██╗ ██║
+██╔══██║██╔══╝  ██║     ██╔══██║██║╚██╔╝██║██╔══██║██║╚██╗██║
+██║  ██║███████╗███████╗██║  ██║██║ ╚═╝ ██║██║  ██║██║ ╚████║
+╚═╝  ╚═╝╚══════╝╚══════╝╚═╝  ╚═╝╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝</pre>
+		<pre class="ascii-art ascii-word">
+██████╗  █████╗ ██████╗  ██████╗██╗ █████╗ 
+██╔════╝ ██╔══██╗██╔══██╗██╔════╝██║██╔══██╗
+██║  ███╗███████║██████╔╝██║     ██║███████║
+██║   ██║██╔══██║██╔══██╗██║     ██║██╔══██║
+╚██████╔╝██║  ██║██║  ██║╚██████╗██║██║  ██║
+ ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝╚═╝  ╚═╝</pre>
+	</div>
+	<div class="identity-grid">
+		<p><span class="output-key">name</span> {portfolio.name}</p>
+		<p><span class="output-key">exp</span> {portfolio.experienceSummary}</p>
+		<p><span class="output-key">location</span> {siteConfig.location}</p>
+	</div>
+	<div class="identity-bio">
+		<span class="output-key">bio</span>
+		<div class="bio-paragraphs">
+			{portfolio.about.map((paragraph) => <p>{paragraph}</p>)}
+		</div>
+	</div>
+	<div class="identity-target">
+		<span class="output-key">target</span>
+		<div class="target-list">
+			<p class="target-intro">Busco incorporarme a equipos y proyectos en las siguientes áreas:</p>
+			{
+				portfolio.interests.map((item) => (
+					<p>
+						<span class="target-name">{item.name}</span>
+						<span class="target-detail">{item.detail}</span>
+					</p>
+				))
+			}
+		</div>
+	</div>
+</section>

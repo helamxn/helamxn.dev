@@ -1,0 +1,78 @@
+---
+import { quickCommands, terminalCommands } from "@/data/commands";
+---
+
+<div class="terminal-input-area">
+	<div
+		id="command-suggestions"
+		class="terminal-suggestions"
+		data-terminal-suggestions
+		role="listbox"
+		aria-label="Comandos sugeridos"
+		hidden
+	>
+		<div class="suggestions-list">
+			{
+				terminalCommands.map((command, index) => (
+					<button
+						id={`command-option-${index}`}
+						type="button"
+						role="option"
+						aria-selected="false"
+						data-command-option={command.value}
+					>
+						<code>{command.value}</code>
+						<span>{command.description}</span>
+					</button>
+				))
+			}
+		</div>
+	</div>
+
+	<form class="terminal-form" data-terminal-form autocomplete="off">
+		<label class="sr-only" for="terminal-command">Comando</label>
+		<span class="prompt" aria-hidden="true">helamxn@dev:~$</span>
+		<div class="terminal-input-wrapper">
+			<input
+				id="terminal-command"
+				name="command"
+				type="text"
+				value=""
+				placeholder="escribe un comando..."
+				spellcheck="false"
+				autocapitalize="none"
+				autocomplete="off"
+				role="combobox"
+				aria-autocomplete="list"
+				aria-haspopup="listbox"
+				aria-expanded="false"
+				aria-controls="command-suggestions"
+				aria-describedby="terminal-hint"
+			/>
+			<span
+				class="terminal-custom-caret"
+				data-terminal-caret
+				aria-hidden="true"></span>
+		</div>
+		<button type="submit" aria-label="Ejecutar comando">enter ↵</button>
+	</form>
+
+	<div class="quick-commands" role="toolbar" aria-label="Comandos rápidos">
+		<span class="quick-commands-label">quick-start:</span>
+		{
+			quickCommands.map((command) => (
+				<button
+					type="button"
+					class="quick-chip"
+					data-quick-command={command}
+				>
+					{command}
+				</button>
+			))
+		}
+	</div>
+
+	<p id="terminal-hint" class="terminal-hint">
+		Tab autocompleta · ↑/↓ historial · Ctrl+L limpia
+	</p>
+</div>
