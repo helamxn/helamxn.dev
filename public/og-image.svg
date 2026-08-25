@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <style>
+      .bg { fill: #0b100e; }
+      .text-muted { fill: #7f8b86; font-family: 'Cascadia Code', 'Consolas', 'Courier New', monospace; font-size: 15px; }
+      .text-accent { fill: #76efbb; font-family: 'Cascadia Code', 'Consolas', 'Courier New', monospace; font-size: 15px; }
+      .text-strong { fill: #f3f7f5; font-family: 'Cascadia Code', 'Consolas', 'Courier New', monospace; font-size: 15px; }
+      .ascii-main { fill: #76efbb; font-family: 'Cascadia Code', 'Consolas', 'Courier New', monospace; font-size: 17px; font-weight: bold; line-height: 1.1; letter-spacing: 0px; }
+      .chip-bg { fill: #0b100e; stroke: #26322d; stroke-width: 1; rx: 3; }
+      .chip-text { fill: #d8dfdc; font-family: 'Cascadia Code', 'Consolas', 'Courier New', monospace; font-size: 13.5px; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" class="bg" />
+
+  <g transform="translate(140, 95)">
+    <!-- Welcome Header -->
+    <text x="0" y="0" class="text-muted">helamxn-shell v1.0 (x86_64-web)</text>
+    <text x="0" y="24" class="text-muted">Escribe <tspan class="text-accent">help</tspan> para ver los comandos disponibles.</text>
+
+    <!-- First Prompt -->
+    <text x="0" y="70" class="text-accent">helamxn@dev:~$ <tspan class="text-strong">whoami</tspan></text>
+
+    <!-- ASCII Art Header HELAMAN GARCIA -->
+    <g transform="translate(0, 105)">
+      <text x="0" y="0" class="ascii-main" xml:space="preserve">██╗  ██╗███████╗██╗      █████╗ ███╗   ███╗ █████╗ ███╗   ██╗</text>
+      <text x="0" y="19" class="ascii-main" xml:space="preserve">██║  ██║██╔════╝██║     ██╔══██╗████╗ ████║██╔══██╗████╗  ██║</text>
+      <text x="0" y="38" class="ascii-main" xml:space="preserve">███████║█████╗  ██║     ███████║██╔████╔██║███████║██╔██╗ ██║</text>
+      <text x="0" y="57" class="ascii-main" xml:space="preserve">██╔══██║██╔══╝  ██║     ██╔══██║██║╚██╔╝██║██╔══██║██║╚██╗██║</text>
+      <text x="0" y="76" class="ascii-main" xml:space="preserve">██║  ██║███████╗███████╗██║  ██║██║ ╚═╝ ██║██║  ██║██║ ╚████║</text>
+      <text x="0" y="95" class="ascii-main" xml:space="preserve">╚═╝  ╚═╝╚══════╝╚══════╝╚═╝  ╚═╝╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝</text>
+      <text x="0" y="118" class="ascii-main" xml:space="preserve">██████╗  █████╗ ██████╗  ██████╗██╗ █████╗ </text>
+      <text x="0" y="137" class="ascii-main" xml:space="preserve">██╔════╝ ██╔══██╗██╔══██╗██╔════╝██║██╔══██╗</text>
+      <text x="0" y="156" class="ascii-main" xml:space="preserve">██║  ███╗███████║██████╔╝██║     ██║███████║</text>
+      <text x="0" y="175" class="ascii-main" xml:space="preserve">██║   ██║██╔══██║██╔══██╗██║     ██║██╔══██║</text>
+      <text x="0" y="194" class="ascii-main" xml:space="preserve">╚██████╔╝██║  ██║██║  ██║╚██████╗██║██║  ██║</text>
+      <text x="0" y="213" class="ascii-main" xml:space="preserve"> ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝╚═╝  ╚═╝</text>
+    </g>
+
+    <!-- Bottom Prompt -->
+    <g transform="translate(0, 360)">
+      <text x="0" y="0" class="text-accent">helamxn@dev:~$ <tspan class="text-muted">escribe un comando ...</tspan></text>
+      
+      <!-- Quick commands bar -->
+      <g transform="translate(0, 26)">
+        <text x="0" y="16" class="text-muted" font-size="13px">quick-start:</text>
+        
+        <!-- Chips -->
+        <g transform="translate(105, 0)">
+          <rect x="0" y="0" width="48" height="24" class="chip-bg" />
+          <text x="24" y="16" class="chip-text" text-anchor="middle">help</text>
+        </g>
+        <g transform="translate(161, 0)">
+          <rect x="0" y="0" width="68" height="24" class="chip-bg" />
+          <text x="34" y="16" class="chip-text" text-anchor="middle">whoami</text>
+        </g>
+        <g transform="translate(237, 0)">
+          <rect x="0" y="0" width="80" height="24" class="chip-bg" />
+          <text x="40" y="16" class="chip-text" text-anchor="middle">projects</text>
+        </g>
+        <g transform="translate(325, 0)">
+          <rect x="0" y="0" width="72" height="24" class="chip-bg" />
+          <text x="36" y="16" class="chip-text" text-anchor="middle">journey</text>
+        </g>
+        <g transform="translate(405, 0)">
+          <rect x="0" y="0" width="64" height="24" class="chip-bg" />
+          <text x="32" y="16" class="chip-text" text-anchor="middle">skills</text>
+        </g>
+        <g transform="translate(477, 0)">
+          <rect x="0" y="0" width="56" height="24" class="chip-bg" />
+          <text x="28" y="16" class="chip-text" text-anchor="middle">tools</text>
+        </g>
+        <g transform="translate(541, 0)">
+          <rect x="0" y="0" width="74" height="24" class="chip-bg" />
+          <text x="37" y="16" class="chip-text" text-anchor="middle">contact</text>
+        </g>
+      </g>
+
+      <!-- Keyboard hint -->
+      <text x="0" y="72" class="text-muted" font-size="12.5px">Tab autocompleta · ↑/↓ historial · Ctrl+L limpia</text>
+    </g>
+  </g>
+</svg>
